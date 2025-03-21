@@ -8,16 +8,38 @@
     <link rel="stylesheet" href="index.css">
 </head>
 
-<body>
+<body style="position: relative;">
     <div class="register">
         <span>Became our member today </span><a href="register.html">Register Now!</a>
     </div>
+    <div class="first flogo">
+        <img src="logo.png" alt="">
+    </div>
+    <!-- <div style="display: block; height: 50px; width: 50px;"> -->
+    <svg class="hb" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" stroke="#eee" stroke-width=".6"
+        fill="rgba(0,0,0,0)" stroke-linecap="round" style="cursor: pointer">
+        <path d="M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7">
+            <animate dur="0.2s" attributeName="d"
+                values="M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7;M3,3L5,5L7,3M5,5L5,5M3,7L5,5L7,7" fill="freeze"
+                begin="start.begin" />
+            <animate dur="0.2s" attributeName="d"
+                values="M3,3L5,5L7,3M5,5L5,5M3,7L5,5L7,7;M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7" fill="freeze"
+                begin="reverse.begin" />
+        </path>
+        <rect width="10" height="10" stroke="none">
+            <animate dur="2s" id="reverse" attributeName="width" begin="click" />
+        </rect>
+        <rect width="10" height="10" stroke="none">
+            <animate dur="0.001s" id="start" attributeName="width" values="10;0" fill="freeze" begin="click" />
+            <animate dur="0.001s" attributeName="width" values="0;10" fill="freeze" begin="reverse.begin" />
+        </rect>
+    </svg>
     <nav class="">
         <div class="first">
             <img src="logo.png" alt="">
         </div>
         <div class="second">
-            <div>
+            <div class="links">
                 <a href="">Home</a>
                 <a href="">About</a>
                 <a href="">Users</a>
@@ -25,9 +47,6 @@
                 <a href="register.html">Register</a>
                 <a href="">Login</a>
                 <a href="">Contact Us</a>
-            </div>
-            <div>
-                ||||
             </div>
         </div>
     </nav>
@@ -38,7 +57,7 @@
         <a href="register.html"><button class="cbtn">Register</button></a>
     </div>
     <div class="master2">
-        <div>
+        <div class="abus">
             <h3>About Us</h3>
             <p>नेशनल सेल्फ केयर टीम (NSCT) "सेवा परमो धर्मः" की भावना से प्रेरित होकर "हम सबका, हम सबके लिए, हम सबके
                 द्वारा" के समभाव से देश प्रदेश के सभी संवर्गो के अंतर्गत आने वाले
@@ -109,11 +128,11 @@
                 </ul>
             </div>
         </div>
+        <button id="scrollToTop"><img src="logo.png" alt="Scroll to top"> Goto Top</button>
         <div class="footer-bottom">
             <p>Copyright © 2025 National Self Care Team | All Rights Reserved</p>
             <p>Designed and Developed by <span>Prince Mishra(SICS Student)</span></p>
         </div>
-        <button id="scrollToTop"><img src="logo.png" alt="Scroll to top"> Goto Top</button>
     </footer>
 
     <script>
@@ -135,9 +154,26 @@
             });
         });
 
+
+
+        // hamburger event =================
+
+        let hb = document.querySelector(".hb")
+        let nav = document.querySelector("nav")
+        let flag = true
+        hb.addEventListener('click', () => {
+            if (flag) {
+                nav.style.left = "0"
+                document.body.style.overflow = "hidden"; 
+                flag = false
+            } else {
+                nav.style.left = "-769px"
+                document.body.style.overflow = "auto";
+                flag = true
+            }
+        })
+
     </script>
-
-
 </body>
 
 </html>
