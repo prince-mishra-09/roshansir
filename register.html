@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        nav .second .regi {
+            color: orangered;
+        }
+
+        .cover a button {
+            background-color: transparent;
+
+        }
+
+        .cover a button:hover {
+            color: orangered;
+        }
+
+
+
+        .container {
+            background: #F7C59F;
+            padding: 30px;
+            width: 80%;
+            max-width: 700px;
+            margin: 2em auto;
+            border-radius: 10px;
+            box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            text-align: center;
+            color: #3D2C2E;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group {
+            display: flex;
+            flex-wrap: wrap;
+            /* justify-content: space-between; */
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        input,
+        select {
+            flex: 1;
+            min-width: 250px;
+            padding: 12px;
+            border: 1px solid #3D2C2E;
+            border-radius: 5px;
+            outline: none;
+            font-size: 14px;
+            background: white;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: #FF5722;
+            box-shadow: 0 0 5px rgba(255, 87, 34, 0.5);
+        }
+
+        .password-wrapper {
+            position: relative;
+            width: 95%;
+            /* right: -40px; */
+        }
+
+        .password-wrapper input {
+            width: 97%;
+            padding-right: 40px;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 18px;
+            color: #3D2C2E;
+        }
+
+        .terms {
+            /* display: flex;
+            align-items: center; */
+            /* gap: 10px; */
+            font-size: 14px;
+        }
+
+        .terms input {
+            width: 20px;
+            width: fit-content;
+            min-width: fit-content;
+        }
+
+        .submit-btn {
+            background: #FF5722;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background: #E64A19;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+
+            .form-group {
+                flex-direction: column;
+            }
+        }
+
+        #error-box {
+            display: none;
+            background: red;
+            color: white;
+            padding: 10px;
+            font-size: 16px;
+            text-align: center;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 5;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="">
+        <div class="first">
+            <img src="logo.png" alt="">
+        </div>
+        <div class="second">
+            <div>
+                <a href="">Home</a>
+                <a href="">About</a>
+                <a href="">Users</a>
+                <a href="">Niyamawali</a>
+                <a href="#" class="regi">Register</a>
+                <a href="">Login</a>
+                <a href="">Contact Us</a>
+            </div>
+            <div>
+                ||||
+            </div>
+        </div>
+
+    </nav>
+    <div id="error-box"></div>
+
+    <div class="cover">
+        <h2>
+            NSCT - नेशनल सेल्फ केयर ट्रस्ट/टीम
+        </h2>
+
+        <a href="index.html"><button class="cbtn">Home</button></a>
+        <a href="#"><button class="cbtn">Register</button></a>
+    </div>
+
+
+    <div class="container">
+        <h2>Create Your Account</h2>
+        <form>
+            <div class="form-group">
+                <input type="text" placeholder="Enter Name">
+                <input type="text" placeholder="Enter Father/Husband Name">
+            </div>
+
+            <div class="form-group">
+                <input type="text" placeholder="Enter Aadhaar No">
+                <input type="tel" placeholder="Enter Mobile">
+            </div>
+
+            <div class="form-group">
+                <div class="password-wrapper">
+                    <input type="password" id="password" placeholder="Enter Password">
+                    <span class="toggle-password" id="pass" onclick="togglePassword('pass')">👁️</span>
+                </div>
+                <div class="password-wrapper">
+                    <input type="password" id="confirm-password" placeholder="Enter Confirm Password">
+                    <span class="toggle-password" id="cpass" onclick="togglePassword('cpass')">👁️</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="date">
+                <select>
+                    <option value="" disabled selected>Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <input type="email" placeholder="Enter Your Email ID">
+            </div>
+
+            <div class="form-group">
+                <input type="text" placeholder="Enter Your Address">
+            </div>
+
+            <div class="form-group">
+                <select>
+                    <option value="" disabled selected>Select District</option>
+                    <option value="District1">District 1</option>
+                    <option value="District2">District 2</option>
+                </select>
+                <select>
+                    <option value="" disabled selected>Select Block</option>
+                    <option value="Block1">Block 1</option>
+                    <option value="Block2">Block 2</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <input type="text" placeholder="Enter Pincode">
+                <input type="text" placeholder="Enter Nominee Name">
+            </div>
+
+            <div class="form-group">
+                <input type="text" placeholder="Enter Relation With Nominee">
+                <input type="tel" placeholder="Enter Nominee Mobile">
+            </div>
+
+            <div class="terms">
+                <input type="checkbox">
+                <label>I Accept all Terms & Conditions</label>
+            </div>
+
+            <button type="submit" class="submit-btn">Signup Now</button>
+        </form>
+        <p class="log">Already have a Account <a href="">Login</a></p>
+    </div>
+
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p><span>CALL US</span></p>
+                <p>########</p>
+                <p><span>EMAIL US</span></p>
+                <p>########</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">User's List</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">Registration</a></li>
+                    <li><a href="#">Niyamawali</a></li>
+                    <li><a href="#">Varshik Shulk List</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright © 2025 National Self Care Team | All Rights Reserved</p>
+            <p>Designed and Developed by <span>Prince Mishra(SICS Student)</span></p>
+        </div>
+        <button id="scrollToTop"><img src="logo.png" alt="Scroll to top"> Goto Top</button>
+    </footer>
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.querySelector("form");
+            const errorBox = document.getElementById("error-box");
+
+            function showError(message) {
+                errorBox.innerText = message;
+                errorBox.style.display = "block";
+            }
+
+            function clearError() {
+                errorBox.innerText = "";
+                errorBox.style.display = "none";
+            }
+
+            function validateInput(input) {
+                const value = input.value.trim();
+                const placeholder = input.placeholder;
+                let errorMessage = "";
+
+                if (input.type === "text") {
+                    if (placeholder.includes("Name") && value.length < 3) {
+                        errorMessage = `${placeholder} must be at least 3 characters.`;
+                    } else if (placeholder.includes("Aadhaar") && !/^\d{12}$/.test(value)) {
+                        errorMessage = "Aadhaar No must be exactly 12 digits.";
+                    } else if (placeholder.includes("Pincode") && !/^\d{6}$/.test(value)) {
+                        errorMessage = "Pincode must be exactly 6 digits.";
+                    } else if (placeholder.includes("Nominee Name") && value.length < 3) {
+                        errorMessage = "Nominee Name must be at least 3 characters.";
+                    }
+                }
+
+                if (input.type === "tel") {
+                    if (placeholder.includes("Mobile") && !/^\d{10}$/.test(value)) {
+                        errorMessage = `${placeholder} must be exactly 10 digits.`;
+                    }
+                }
+
+                if (input.type === "password") {
+                    if (input.id === "password" && !/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,}$/.test(value)) {
+                        errorMessage = "Password must be at least 6 characters, include a number and a special character.";
+                    } else if (input.id === "confirm-password" && value !== document.getElementById("password").value) {
+                        errorMessage = "Passwords do not match.";
+                    }
+                }
+
+                if (input.type === "email") {
+                    if (!/^\S+@\S+\.\S+$/.test(value)) {
+                        errorMessage = "Enter a valid email address.";
+                    }
+                }
+
+                if (input.type === "date") {
+                    if (new Date(value) > new Date()) {
+                        errorMessage = "Date of Birth cannot be in the future.";
+                    }
+                }
+
+                if (input.tagName === "SELECT") {
+                    if (input.value === "") {
+                        errorMessage = "Please select an option.";
+                    }
+                }
+
+                if (errorMessage) {
+                    showError(errorMessage);
+                    input.style.borderColor = "red";
+                } else {
+                    clearError();
+                    input.style.borderColor = "";
+                }
+            }
+
+            document.querySelectorAll("input, select").forEach((input) => {
+                input.addEventListener("blur", () => validateInput(input));
+            });
+
+            form.addEventListener("submit", function (event) {
+                let isValid = true;
+
+                document.querySelectorAll("input, select").forEach((input) => {
+                    validateInput(input);
+                    if (input.style.borderColor === "red") {
+                        isValid = false;
+                    }
+                });
+
+                if (!document.querySelector(".terms input").checked) {
+                    showError("You must accept the terms and conditions.");
+                    isValid = false;
+                }
+
+                if (!isValid) {
+                    event.preventDefault();
+                }
+            });
+        });
+    </script>
+
+
+
+</body>
+
+</html>
