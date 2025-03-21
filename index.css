@@ -91,6 +91,7 @@ nav .second div a:hover {
     font-size: 4rem;
     color: red;
     font-weight: 900;
+    text-align: center;
 }
 
 .cbtn {
@@ -314,41 +315,6 @@ footer .footer-bottom span {
 
 
 @media (max-width: 768px) {
-
-    nav,
-    nav .first,
-    nav .second,
-    nav .second .links {
-        flex-direction: column;
-        justify-content: flex-start;
-        width: 100%;
-    }
-
-    nav {
-        width: 100%;
-        height: 100vh;
-        z-index: 8;
-        position: absolute;
-        left: -769px;
-    }
-
-    nav .first {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-direction: row;
-        /* box-sizing: border-box; */
-    }
-
-    .hb {
-        position: absolute;
-        height: 65px;
-        right: 20px;
-        z-index: 9;
-    }
-
-
-
     .register{
         font-size: 19px;
     }
@@ -400,11 +366,47 @@ footer .footer-bottom span {
 
 }
 
+@media (max-width: 935px) {
+    nav,
+    nav .first,
+    nav .second,
+    nav .second .links {
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 100%;
+    }
 
-@media (min-width: 769px) {
-    .hb,.flogo{
+    nav {
+        width: 100%;
+        height: 100vh;
+        z-index: 8;
+        position: absolute;
+        left: -935px;
+    }
+
+    nav .first {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        /* box-sizing: border-box; */
+    }
+
+    .hb {
+        position: absolute;
+        height: 65px;
+        right: 20px;
+        z-index: 9;
+    }
+
+
+}
+@media (min-width: 936px) {
+    .hb, .flogo{
         display: none;
     }
+}
+@media (min-width: 769px) {
     .master3 h3{
         font-size: 20px;
     }

@@ -29,7 +29,7 @@ hb.addEventListener('click', () => {
         document.body.style.overflow = "hidden"; 
         flag = false
     } else {
-        nav.style.left = "-769px"
+        nav.style.left = "-935px"
         document.body.style.overflow = "auto";
         flag = true
     }
